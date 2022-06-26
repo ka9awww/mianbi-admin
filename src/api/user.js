@@ -17,14 +17,6 @@ export function getUsers(params = {}) {
         method: 'GET',
         url: '/users',
         params,
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
-    }).catch((err) => {
-        if (err.response.status === 401) {
-            return router.replace('/login')
-        }
-        throw err
     })
 }
 
